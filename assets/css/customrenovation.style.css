@@ -1,0 +1,47 @@
+:focus {
+  outline: 0;
+  box-shadow: 0 0 8px #00baff !important;
+}
+
+body {
+  font-family: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
+  font-weight: 400;
+  color: #191919;
+}
+
+.text-white {
+  color: #e8e8e8 !important;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+u,
+ins {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  font-style: italic;
+}
+
+abbr {
+  -webkit-text-decoration-line: none !important;
+          text-decoration-line: none !important;
+  -webkit-text-decoration-style: none !important;
+          text-decoration-style: none !important;
+  -webkit-text-decoration-color: initial !important;
+          text-decoration-color: initial !important;
+}
+
+b,
+strong {
+  font-weight: 700 !important;
+}
+
+a {
+  color: #8c1d40;
+}
