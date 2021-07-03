@@ -1,7 +1,7 @@
 {
   "name": "asuwatts/customrenovation",
   "description": "A custom sub-subtheme for Webspark 2",
-  "type": "drupal-custom-theme",
+  "type": "drupal-theme",
   "license": "GPL-2.0-or-later",
   "authors": [
     {
