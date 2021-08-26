@@ -7,3 +7,4 @@ This is a custom sub-subtheme for Webspark 2, based on the Renovation subtheme o
 2. After you have followed these instructions, navigate to the subtheme folder in your terminal and run "npm install".
 3. After npm has finished installing, run "npm run watch".
 4. Please note that if you are using something like ddev or lando, you will need to prepend these commands or ssh into your container before running them.
+5. If you plan on installing this module via composer, you will not be able to customize it. However, if you would like to customize it, you can move it out of the web/themes/composer directory and place it one level up (at web/themes/). Then you will need to remove it from your composer.json and composer.lock files. From this point, it should be unique to your site and won't receive any updates from the original source in github/composer.
