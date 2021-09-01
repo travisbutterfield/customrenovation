@@ -18,7 +18,7 @@ In order to make this subtheme work with Browsersync for local front-end develop
 4. Navigate to the customrenovation subtheme folder.
 5. Run `npm install` from the within subtheme folder.
 6. After npm has finished installing, run `npm run watch` also from the subtheme folder.
-7. You will most likely need to open port 3000 if you want to use browsersync. You will need to create a new file in the .ddev directory at the root level of your site. The new file should be named "docker-compose.webpack.yaml". The contents of this file should be as follows:
+7. You will most likely need to open port 3000 if you want to use browsersync. To do so, you will need to create a new file in the .ddev directory at the root level of your site. The new file should be named "docker-compose.webpack.yaml". The contents of this file should be as follows:
 ```yaml
 version: "3.6"
 services:
