@@ -2,7 +2,7 @@
 
 This is a custom sub-subtheme for Webspark 2, based on the Renovation subtheme of the Radix theme. I have imported the Sass variables from Renovation to make it easier for us to do Sass front-end development.
 
-##Instructions for installation and use
+## Instructions for installation and use
 1. If you plan on installing this module via composer (`composer install asuwatts/customrenovation:dev-main`), you will not be able to customize it for your site. 
    1. However, if you would like to use it as a starting point for a custom theme, you can install it via composer and then move it out of the web/themes/composer directory and place it one level up (at web/themes/). 
    2. Then you will need to remove it from your composer.json and composer.lock files: `composer remove asuwatts/customrenovation` 
