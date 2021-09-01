@@ -27,7 +27,7 @@ services:
          - HTTPS_EXPOSE=${DDEV_ROUTER_HTTPS_PORT}:80,${DDEV_MAILHOG_HTTPS_PORT}:8025,3000:3000
 ```
 5. You will need to restart ddev for these changes to come into effect: `ddev restart`. 
-6. After ddev has successfully restarded, navigate to the "web/themes/customrenovation" subtheme folder in your terminal.
+6. After ddev has successfully restarted, navigate to the "web/themes/customrenovation" subtheme folder in your terminal.
 7. Run `npm install` from the within the subtheme folder.
 8. After npm has finished installing, run `npm run watch`, also from the subtheme folder.
 9. To utilize browsersync, don't use the <span>htt</span>ps://localhost:3000 option that is provided. Instead, navigate to [https://\<sitename>.ddev.site:3000](https://\<sitename>.ddev.site:3000). (Again, replace `<sitename>` with the short name of your site).
