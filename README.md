@@ -10,12 +10,15 @@ This is a custom sub-subtheme for Webspark 2, based on the Renovation subtheme o
    4. From this point, be aware that the theme will be unique to your site and won't receive any updates from the original source in github.
 
 ### Browsersync setup
-1. In order to make this subtheme work with Browsersync for local front-end development, you will need to make a few changes. Open the "customrenovation/webpack.mix.js" file and enter your site's name on the line that says `const proxy = '<sitename>.ddev.site';` (without the < > symbols). Then save the file. Please note the lack of `http://` or `https://` protocols. Including the protocol will prevent browsersync from working properly.
-2. After you have followed these instructions, run `ddev ssh`.
-3. Navigate to the customrenovation subtheme folder.
-4. Run `npm install` from the within subtheme folder.
-5. After npm has finished installing, run `npm run watch` also from the subtheme folder.
-6. You will most likely need to open port 3000 if you want to use browsersync. You will need to create a new file in the .ddev directory at the root level of your site. The new file should be named "docker-compose.webpack.yaml". The contents of this file should be as follows:
+In order to make this subtheme work with Browsersync for local front-end development, you will need to make a few changes.
+1. You will need to set Drupal 9 up for local development by creating a "web/sites/default/settings.local.php" file. 
+   1. The easiest way to do this is to open the "web/sites/example.settings.local.php" file and follow the directions. This will disable some of the caching in Drupal so that you won't have to rebuild the cache every time you make a change in your local environment.  
+2. After setting your site up for local development, open the "customrenovation/webpack.mix.js" file and enter your site's name on the line that says `const proxy = '<sitename>.ddev.site';` (without the < > symbols). Then save the file. Please note the lack of `http://` or `https://` protocols. Including the protocol will prevent browsersync from working properly.
+3. After you have followed these instructions, run `ddev ssh`.
+4. Navigate to the customrenovation subtheme folder.
+5. Run `npm install` from the within subtheme folder.
+6. After npm has finished installing, run `npm run watch` also from the subtheme folder.
+7. You will most likely need to open port 3000 if you want to use browsersync. You will need to create a new file in the .ddev directory at the root level of your site. The new file should be named "docker-compose.webpack.yaml". The contents of this file should be as follows:
 ```yaml
 version: "3.6"
 services:
