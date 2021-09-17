@@ -7,7 +7,7 @@
  | for your application. See https://github.com/JeffreyWay/laravel-mix.
  |
  */
-const proxy = 'http://<sitename>.ddev.site';
+const proxy = 'cjnews1.ddev.site';
 const mix = require('laravel-mix');
 
 /*
@@ -21,6 +21,10 @@ mix
   .options({
     processCssUrls: false
   });
+
+mix.webpackConfig({
+  devtool: 'source-map'
+})
 
 /*
  |--------------------------------------------------------------------------
@@ -45,4 +49,5 @@ mix.sass('src/sass/customrenovation.style.scss', 'css');
  | JS
  |--------------------------------------------------------------------------
  */
-mix.js('src/js/customrenovation.script.js', 'js');
+mix.js('src/js/customrenovation.script.js', 'js')
+    .sourceMaps(true,'eval-source-map');
