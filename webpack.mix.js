@@ -7,7 +7,7 @@
  | for your application. See https://github.com/JeffreyWay/laravel-mix.
  |
  */
-const proxy = '<sitename>.ddev.site';
+const proxy = 'asuwatts.ddev.site';
 const mix = require('laravel-mix');
 
 /*
@@ -16,11 +16,11 @@ const mix = require('laravel-mix');
  |--------------------------------------------------------------------------
  */
 mix
-  .setPublicPath('assets')
-  .disableNotifications()
-  .options({
-    processCssUrls: false
-  });
+    .setPublicPath('assets')
+    .disableNotifications()
+    .options({
+      processCssUrls: false
+    });
 
 mix.webpackConfig({
   devtool: 'source-map'

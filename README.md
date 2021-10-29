@@ -3,7 +3,7 @@
 This is a custom sub-subtheme for Webspark 2, based on the Renovation subtheme of the Radix theme. I have imported the Sass variables from Renovation to make it easier for us to do Sass front-end development.
 
 ## Instructions for installation and use
-1. If you plan on installing this module via composer (`composer require asuwatts/customrenovation:dev-main`), you will not be able to customize it for your site.
+1. If you plan on installing this module via composer (`composer install asuwatts/customrenovation:dev-main`), you will not be able to customize it for your site.
    1. However, if you would like to use it as a starting point for a custom theme, you can install it via composer and then move it out of the web/themes/composer directory and place it one level up (at web/themes/).
    2. Then you will need to remove it from your composer.json and composer.lock files: `composer remove asuwatts/customrenovation`
    3. After that, you will need to make sure that the references to the Sass variables are updated. Most likely you will need to do a find/replace changing `../../../webspark-theme-renovation` to be `../../../composer/webspark-theme-renovation` in the "customrenovation/src/sass/customrenovation.style.scss" file (which is where you should make any Sass/css edits).
@@ -25,16 +25,21 @@ services:
          - HTTP_EXPOSE=${DDEV_ROUTER_HTTP_PORT}:80,${DDEV_MAILHOG_PORT}:8025,3001:3000
          - HTTPS_EXPOSE=${DDEV_ROUTER_HTTPS_PORT}:80,${DDEV_MAILHOG_HTTPS_PORT}:8025,3000:3000
 ```
-4. You will need to restart ddev for these changes to come into effect: `ddev restart`.
-5. After ddev has successfully restarted, run `ddev ssh`
-6. Navigate to the customrenovation subtheme folder in your terminal.
-7. Run `npm install` from the within the subtheme folder.
-8. After npm has finished installing, run `npm run watch`, also from the subtheme folder.
-9. To utilize browsersync, don't use the <span>htt</span>ps://localhost:3000 option that is provided. Instead, navigate to [https://\<sitename>.ddev.site:3000](https://\<sitename>.ddev.site:3000). (Again, replace `<sitename>` with the short name of your site).
-10. You can test if browsersync and the Sass variables are working correctly by making a change to the "customrenovation/src/sass/customrenovation.style.scss" file. An easy test is to change the color of links from maroon to blue.
+4. Add the following to web/sites/default/settings.local.php for this to work:
+```php
+$settings['reverse_proxy'] = TRUE;
+$settings['reverse_proxy_addresses'] = ['127.0.0.1', 'REMOTE_ADDR'];
+```
+5. You will need to restart ddev for these changes to come into effect: `ddev restart`.
+6. After ddev has successfully restarted, run `ddev ssh`
+7. Navigate to the "web/themes/customrenovation" subtheme folder in your terminal.
+8. Run `npm install` from the within the subtheme folder.
+9. After npm has finished installing, run `npm run watch`, also from the subtheme folder.
+10. To utilize browsersync, don't use the <span>htt</span>ps://localhost:3000 option that is provided. Instead, navigate to [https://\<sitename>.ddev.site:3000](https://\<sitename>.ddev.site:3000). (Again, replace `<sitename>` with the short name of your site).
+11. You can test if browsersync and the Sass variables are working correctly by making a change to the "customrenovation/src/sass/customrenovation.style.scss" file. An easy test is to change the color of links from maroon to blue.
 ```css
 a {
-   color: $blue;
+  color: $blue;
 }
 ```
 Once you save the file, a second or two later, the color of the maroon links in your browser should change to blue. If this happens, you have set things up successfully. Congratulations!
