@@ -16,14 +16,14 @@ const mix = require('laravel-mix');
  |--------------------------------------------------------------------------
  */
 mix
-    .setPublicPath('assets')
-    .disableNotifications()
-    .options({
-      processCssUrls: false
-    });
+  .setPublicPath('assets')
+  .disableNotifications()
+  .options({
+    processCssUrls: false,
+  });
 
 mix.webpackConfig({
-  devtool: 'source-map'
+  devtool: 'source-map',
 })
 
 /*
@@ -49,5 +49,5 @@ mix.sass('src/sass/customrenovation.style.scss', 'css');
  | JS
  |--------------------------------------------------------------------------
  */
-mix.js('src/js/customrenovation.script.js', 'js')
+mix.js('src/js/customrenovation.js', 'js')
     .sourceMaps(true,'eval-source-map');
