@@ -49,5 +49,5 @@ mix.sass('src/sass/customrenovation.style.scss', 'css');
  | JS
  |--------------------------------------------------------------------------
  */
-mix.js('src/js/customrenovation.js', 'js')
+mix.js('src/js/customrenovation.script.js', 'js')
     .sourceMaps(true,'eval-source-map');
